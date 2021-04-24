@@ -1,0 +1,331 @@
+
+Se encontro 322486 en el arreglo.
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.4781789780 s
+user (Tiempo de procesamiento en CPU) 27.8846720000 s
+sys (Tiempo en acciónes de E/S)  0.4298650000 s
+CPU/Wall   99.4253776616 % 
+
+
+real (Tiempo total)  2.8478178978e+01 s
+user (Tiempo de procesamiento en CPU) 2.7884672000e+01 s
+sys (Tiempo en acciónes de E/S)  4.2986500000e-01 s
+CPU/Wall   99.4253776616 % 
+
+
+
+14700764 no se encontro
+
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.4637360573 s
+user (Tiempo de procesamiento en CPU) 27.8137340000 s
+sys (Tiempo en acciónes de E/S)  0.5538530000 s
+CPU/Wall   99.6622050700 % 
+
+
+real (Tiempo total)  2.8463736057e+01 s
+user (Tiempo de procesamiento en CPU) 2.7813734000e+01 s
+sys (Tiempo en acciónes de E/S)  5.5385300000e-01 s
+CPU/Wall   99.6622050700 % 
+
+
+
+Se encontro 3128036 en el arreglo.
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.3021368980 s
+user (Tiempo de procesamiento en CPU) 27.6991600000 s
+sys (Tiempo en acciónes de E/S)  0.4982690000 s
+CPU/Wall   99.6300353630 % 
+
+
+real (Tiempo total)  2.8302136898e+01 s
+user (Tiempo de procesamiento en CPU) 2.7699160000e+01 s
+sys (Tiempo en acciónes de E/S)  4.9826900000e-01 s
+CPU/Wall   99.6300353630 % 
+
+
+
+Se encontro 6337399 en el arreglo.
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.5507819653 s
+user (Tiempo de procesamiento en CPU) 27.9248940000 s
+sys (Tiempo en acciónes de E/S)  0.5098060000 s
+CPU/Wall   99.5934193137 % 
+
+
+real (Tiempo total)  2.8550781965e+01 s
+user (Tiempo de procesamiento en CPU) 2.7924894000e+01 s
+sys (Tiempo en acciónes de E/S)  5.0980600000e-01 s
+CPU/Wall   99.5934193137 % 
+
+
+
+61396 no se encontro
+
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.4749159813 s
+user (Tiempo de procesamiento en CPU) 27.8191810000 s
+sys (Tiempo en acciónes de E/S)  0.5295930000 s
+CPU/Wall   99.5570066603 % 
+
+
+real (Tiempo total)  2.8474915981e+01 s
+user (Tiempo de procesamiento en CPU) 2.7819181000e+01 s
+sys (Tiempo en acciónes de E/S)  5.2959300000e-01 s
+CPU/Wall   99.5570066603 % 
+
+
+
+Se encontro 10393545 en el arreglo.
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.3651521206 s
+user (Tiempo de procesamiento en CPU) 27.7672160000 s
+sys (Tiempo en acciónes de E/S)  0.4911560000 s
+CPU/Wall   99.6235517436 % 
+
+
+real (Tiempo total)  2.8365152121e+01 s
+user (Tiempo de procesamiento en CPU) 2.7767216000e+01 s
+sys (Tiempo en acciónes de E/S)  4.9115600000e-01 s
+CPU/Wall   99.6235517436 % 
+
+
+
+2147445644 no se encontro
+
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.3321139812 s
+user (Tiempo de procesamiento en CPU) 27.8074550000 s
+sys (Tiempo en acciónes de E/S)  0.4191630000 s
+CPU/Wall   99.6276452180 % 
+
+
+real (Tiempo total)  2.8332113981e+01 s
+user (Tiempo de procesamiento en CPU) 2.7807455000e+01 s
+sys (Tiempo en acciónes de E/S)  4.1916300000e-01 s
+CPU/Wall   99.6276452180 % 
+
+
+
+Se encontro 1295390003 en el arreglo.
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.4731709957 s
+user (Tiempo de procesamiento en CPU) 27.8891900000 s
+sys (Tiempo en acciónes de E/S)  0.4473300000 s
+CPU/Wall   99.5200710320 % 
+
+
+real (Tiempo total)  2.8473170996e+01 s
+user (Tiempo de procesamiento en CPU) 2.7889190000e+01 s
+sys (Tiempo en acciónes de E/S)  4.4733000000e-01 s
+CPU/Wall   99.5200710320 % 
+
+
+
+450057883 no se encontro
+
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.2859861851 s
+user (Tiempo de procesamiento en CPU) 27.7338980000 s
+sys (Tiempo en acciónes de E/S)  0.4475310000 s
+CPU/Wall   99.6303569393 % 
+
+
+real (Tiempo total)  2.8285986185e+01 s
+user (Tiempo de procesamiento en CPU) 2.7733898000e+01 s
+sys (Tiempo en acciónes de E/S)  4.4753100000e-01 s
+CPU/Wall   99.6303569393 % 
+
+
+
+187645041 no se encontro
+
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.3207979202 s
+user (Tiempo de procesamiento en CPU) 27.7518790000 s
+sys (Tiempo en acciónes de E/S)  0.4821870000 s
+CPU/Wall   99.6937518481 % 
+
+
+real (Tiempo total)  2.8320797920e+01 s
+user (Tiempo de procesamiento en CPU) 2.7751879000e+01 s
+sys (Tiempo en acciónes de E/S)  4.8218700000e-01 s
+CPU/Wall   99.6937518481 % 
+
+
+
+1980098116 no se encontro
+
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  29.0600199699 s
+user (Tiempo de procesamiento en CPU) 28.1958760000 s
+sys (Tiempo en acciónes de E/S)  0.4944710000 s
+CPU/Wall   98.7278984312 % 
+
+
+real (Tiempo total)  2.9060019970e+01 s
+user (Tiempo de procesamiento en CPU) 2.8195876000e+01 s
+sys (Tiempo en acciónes de E/S)  4.9447100000e-01 s
+CPU/Wall   98.7278984312 % 
+
+
+
+152503 no se encontro
+
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.3452060223 s
+user (Tiempo de procesamiento en CPU) 27.7146280000 s
+sys (Tiempo en acciónes de E/S)  0.5153970000 s
+CPU/Wall   99.5936490207 % 
+
+
+real (Tiempo total)  2.8345206022e+01 s
+user (Tiempo de procesamiento en CPU) 2.7714628000e+01 s
+sys (Tiempo en acciónes de E/S)  5.1539700000e-01 s
+CPU/Wall   99.5936490207 % 
+
+
+
+5000 no se encontro
+
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.2535412312 s
+user (Tiempo de procesamiento en CPU) 27.6768340000 s
+sys (Tiempo en acciónes de E/S)  0.4830540000 s
+CPU/Wall   99.6685256889 % 
+
+
+real (Tiempo total)  2.8253541231e+01 s
+user (Tiempo de procesamiento en CPU) 2.7676834000e+01 s
+sys (Tiempo en acciónes de E/S)  4.8305400000e-01 s
+CPU/Wall   99.6685256889 % 
+
+
+
+Se encontro 1493283650 en el arreglo.
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.3513741493 s
+user (Tiempo de procesamiento en CPU) 27.6955410000 s
+sys (Tiempo en acciónes de E/S)  0.4748450000 s
+CPU/Wall   99.3616247722 % 
+
+
+real (Tiempo total)  2.8351374149e+01 s
+user (Tiempo de procesamiento en CPU) 2.7695541000e+01 s
+sys (Tiempo en acciónes de E/S)  4.7484500000e-01 s
+CPU/Wall   99.3616247722 % 
+
+
+
+214826 no se encontro
+
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.3556389809 s
+user (Tiempo de procesamiento en CPU) 27.8367030000 s
+sys (Tiempo en acciónes de E/S)  0.4340040000 s
+CPU/Wall   99.7004758703 % 
+
+
+real (Tiempo total)  2.8355638981e+01 s
+user (Tiempo de procesamiento en CPU) 2.7836703000e+01 s
+sys (Tiempo en acciónes de E/S)  4.3400400000e-01 s
+CPU/Wall   99.7004758703 % 
+
+
+
+Se encontro 1843349527 en el arreglo.
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.4325709343 s
+user (Tiempo de procesamiento en CPU) 27.8901290000 s
+sys (Tiempo en acciónes de E/S)  0.4512100000 s
+CPU/Wall   99.6791287903 % 
+
+
+real (Tiempo total)  2.8432570934e+01 s
+user (Tiempo de procesamiento en CPU) 2.7890129000e+01 s
+sys (Tiempo en acciónes de E/S)  4.5121000000e-01 s
+CPU/Wall   99.6791287903 % 
+
+
+
+1360839354 no se encontro
+
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.4101979733 s
+user (Tiempo de procesamiento en CPU) 27.8369290000 s
+sys (Tiempo en acciónes de E/S)  0.4633030000 s
+CPU/Wall   99.6129348576 % 
+
+
+real (Tiempo total)  2.8410197973e+01 s
+user (Tiempo de procesamiento en CPU) 2.7836929000e+01 s
+sys (Tiempo en acciónes de E/S)  4.6330300000e-01 s
+CPU/Wall   99.6129348576 % 
+
+
+
+Se encontro 2109248666 en el arreglo.
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  30.7449991703 s
+user (Tiempo de procesamiento en CPU) 29.5668960000 s
+sys (Tiempo en acciónes de E/S)  0.6090900000 s
+CPU/Wall   98.1492496807 % 
+
+
+real (Tiempo total)  3.0744999170e+01 s
+user (Tiempo de procesamiento en CPU) 2.9566896000e+01 s
+sys (Tiempo en acciónes de E/S)  6.0909000000e-01 s
+CPU/Wall   98.1492496807 % 
+
+
+
+Se encontro 2147470852 en el arreglo.
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  30.1316659451 s
+user (Tiempo de procesamiento en CPU) 28.7672980000 s
+sys (Tiempo en acciónes de E/S)  0.5252410000 s
+CPU/Wall   97.2151325898 % 
+
+
+real (Tiempo total)  3.0131665945e+01 s
+user (Tiempo de procesamiento en CPU) 2.8767298000e+01 s
+sys (Tiempo en acciónes de E/S)  5.2524100000e-01 s
+CPU/Wall   97.2151325898 % 
+
+
+
+0 no se encontro
+
+	Resultados para n: 10000000 datos.
+
+real (Tiempo total)  28.5769908428 s
+user (Tiempo de procesamiento en CPU) 27.9711240000 s
+sys (Tiempo en acciónes de E/S)  0.4549590000 s
+CPU/Wall   99.4719253554 % 
+
+
+real (Tiempo total)  2.8576990843e+01 s
+user (Tiempo de procesamiento en CPU) 2.7971124000e+01 s
+sys (Tiempo en acciónes de E/S)  4.5495900000e-01 s
+CPU/Wall   99.4719253554 % 
+
+
