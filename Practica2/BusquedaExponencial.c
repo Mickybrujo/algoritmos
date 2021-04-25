@@ -70,6 +70,9 @@ int main(int argc, char *argv[])
     int n_datos, numero_buscado;                           //Cantidad de datos que el usuario desea considerar para buscar
     archivo_entrada = fopen("10millones.txt", "r");        //Abrimos el archivo con 10 millones de datos en modo lectura
 
+    //Iniciar el conteo del tiempo para las evaluaciones de rendimiento
+    uswtime(&utime0, &stime0, &wtime0);
+
     //Validamos si hubo errores al abrir el archivo
     if (archivo_entrada == NULL)
     {
@@ -96,9 +99,6 @@ int main(int argc, char *argv[])
     //Extrae n_datos del archivo y los guarda en A[]
     Arreglo = readTxt(n_datos, archivo_entrada);
     fclose(archivo_entrada); //Cerramos el archivo de los datos
-
-    //Iniciar el conteo del tiempo para las evaluaciones de rendimiento
-    uswtime(&utime0, &stime0, &wtime0);
 
     //Ejecuta el algoritmo de busqueda
     int indice = BusquedaExponencial(Arreglo, n_datos, numero_buscado);
