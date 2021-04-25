@@ -37,11 +37,11 @@ int busquedaBinaria(int arr[], int izquierda, int derecha, int x)
             return mid;
 
         // Si el elemento es m�s peque�o que mid, entonces solo puede estar presente en el subarreglo izquierdo
-        else if (arr[mid] > x)
+        if (arr[mid] > x)
             derecha = mid - 1;
 
         // De lo contrario, el elemento solo puede estar presente en el subarreglo derecho
-        else
+        if (arr[mid] < x)
         {
             izquierda = mid + 1;
         }
