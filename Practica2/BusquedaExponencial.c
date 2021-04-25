@@ -28,7 +28,7 @@ int busquedaBinaria(int arr[], int izquierda, int derecha, int x)
     // Nota: el tama�o del arreglo es necesario porque cuando se recibe
     // como argumento no se puede calcular dentro de la funci�n
 
-    while (derecha >= izquierda)
+    while (derecha > izquierda)
     {
         int mid = (izquierda + (derecha - 1)) / 2;
 
