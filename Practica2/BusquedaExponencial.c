@@ -1,3 +1,27 @@
+//*****************************************************************
+//BUSQUEDAEXPONENCIAL.C
+//*****************************************************************
+//*****************************************************************
+//Integrantes: Amazul
+/*
+    2019630068 ANGELES HERNANDEZ JESUS EDUARDO 
+    2015060081 BAEZA COLIN ANA KAREN
+    2019630052 BECERRA RAMIREZ LUIS ARTURO 
+    2018630131 BUSTAMANTE MENDOZA MIGUEL IMANOL
+    */
+//Curso: Análisis de algoritmos
+//Grupo: 3CM12
+//Carrera: Ingenieria en Sistemas Computacionales (Plan 2009)
+//Abril 2021
+//ESCOM-IPN
+//Descripcion:
+/*
+    Busqueda de un numero entero en un arreglo ordenado de enteros utilizando el 
+    metodo de busqueda exponencial de forma iterativa.
+    */
+//Compilación de la libreria: "gcc BusquedaExponencial.c tiempo.c" (Generación del ejecutable)
+//*****************************************************************
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
