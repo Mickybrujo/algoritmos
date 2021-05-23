@@ -16,7 +16,7 @@
 //ESCOM-IPN
 //Descripcion:
 /*
-    Codifica un fichero utilizando el algoritmo de Huffman.
+    Codifica un fichero utilizando el codigo de Huffman.
 */
 //Compilación de la libreria: "gcc huffman_coder.c" (Generación del ejecutable)
 //*****************************************************************
@@ -28,7 +28,6 @@ struct tree
 {
     char caracter;
     int repeticiones;
-    int etiqueta;
     struct tree *izq, *der;
 };
 
@@ -38,11 +37,20 @@ struct list
     struct list *next;
 };
 
-void insertarLista(struct list **lista, int caracter, int dato){
+struct table{
+    char caracter;
+    int code;
+    int tam_code;
+    struct table *next;
+};
+
+void insertarLista(struct list **lista, int caracter, int dato, struct tree *hoja_izq, struct tree *hoja_der){
     struct list *nuevo=NULL;
     struct list *inicio=(*lista);
     nuevo=(struct list *)malloc(sizeof(struct list));
     nuevo->nodo=(struct tree *)malloc(sizeof(struct tree ));
+    nuevo->nodo->izq=hoja_izq;
+    nuevo->nodo->der=hoja_der;
     nuevo->nodo->repeticiones=dato;
     if (caracter!=-1)
     {
@@ -79,17 +87,104 @@ void mostrarLista (struct list *lista)
     }
 }
 
+void mostrarTabla (struct table *tabla){
+    while (tabla)
+    {
+        printf("\n%c\t%i\t%i",tabla->caracter,tabla->code,tabla->tam_code);
+        tabla=tabla->next;
+    }
+    
+}
 
+struct list *extraerLista(struct list **lista){
+    struct list *aux=(*lista);
+    (*lista)=(*lista)->next;
+    return aux;
+}
 
+struct tree *codigoHuffman(struct list **lista){
+    struct list *hoja_izq=NULL, *hoja_der=NULL;
+    int sum_frec;
+    while ((*lista)->next)
+    {
+        hoja_izq=(struct list *)extraerLista(lista);
+        hoja_der=(struct list *)extraerLista(lista);
+        sum_frec=hoja_izq->nodo->repeticiones + hoja_der->nodo->repeticiones;
+        insertarLista(lista,-1,sum_frec,hoja_izq->nodo,hoja_der->nodo);
+    }
+    return (*lista)->nodo;
+}
+
+void recorridoinorden(struct tree *raiz)
+{
+    if (raiz) // Verifica si la hoja en la que no es valida y no apunta a NULL
+    {
+        //Recorrido InOrden usando recursividad
+        recorridoinorden(raiz->izq);
+        printf("\n\t%i ",raiz->repeticiones);;
+        recorridoinorden(raiz->der);
+    }
+}
+
+void insertarTabla(struct table **tabla,char caracter,int tam_code, int code){
+    struct table *nuevo=NULL;
+    nuevo=(struct table *)malloc(sizeof(struct table));
+    nuevo->caracter=caracter;
+    nuevo->code=code;
+    nuevo->tam_code=tam_code;
+    nuevo->next=(*tabla);
+    (*tabla)=nuevo;
+}
+
+void generarCodigos(struct table **tabla,struct tree *raiz,int tam_code,int code){
+    if (raiz->izq)
+    {
+        generarCodigos(tabla,raiz->izq,tam_code+1,code<<1);
+    }
+    if (raiz->der)
+    {
+        generarCodigos(tabla,raiz->der,tam_code+1,(code<<1)|1);
+    }
+    if(!(raiz->der && raiz->izq)){
+        insertarTabla(tabla,raiz->caracter,tam_code,code);
+    }
+}
+
+void escribirTabla(struct table *tabla, FILE *archivo){
+    while (tabla)
+    {
+        fwrite(&tabla->caracter,sizeof(char),1,archivo);
+        fwrite(&tabla->code,sizeof(int),1,archivo);
+        fwrite(&tabla->tam_code,sizeof(int),1,archivo);
+        tabla=tabla->next;
+    }
+}
+
+//void codificarArchivo
+
+struct table * buscarTabla(struct table *tabla,char caracter){
+    while (tabla && tabla->caracter!=caracter)
+    {
+        tabla=tabla->next;
+    }
+    return tabla;
+}
 
 int main(int argc, char *argv[])
 {
-    FILE *archivo_entrada;
+    FILE *archivo_entrada,*archivo_comprimido;
     struct list *lista=NULL;
-    char *A;
+    struct table *tabla=NULL;
+    struct table *elem_tabla=NULL;
+    struct tree *arbol=NULL;
+    char *A, caracter;
     int tam_archivo;
+    int n_elementos=0;
+    int num_bits=0;
+    int palabra=0;
     int repeticiones[256]={0};                                           
-    archivo_entrada = fopen("prueba", "rb"); //prueba: nombre del archivo con extension ej: michis.mp4
+    archivo_entrada = fopen("hola.mp3", "r"); //prueba: nombre del archivo con extension ej: michis.mp4
+    archivo_comprimido=fopen("comprimido1.txt","wb");
     fseek(archivo_entrada, 0L, SEEK_END);
     tam_archivo=ftell(archivo_entrada);
     A=(char *)malloc(sizeof(char) * tam_archivo); //No quitar, se rompe :c
@@ -101,13 +196,48 @@ int main(int argc, char *argv[])
     for (int j = 0; j < 255; j++)
     {
         if(repeticiones[j]!=0){
-            insertarLista(&lista,j,repeticiones[j]);
+            n_elementos++;
+            insertarLista(&lista,j,repeticiones[j],NULL,NULL);
         }
     }
     mostrarLista(lista);
-    printf("\n\n\t%d\n",tam_archivo);
-    
+    printf("\n\n\t%d -> %d\n",tam_archivo,n_elementos);
+    //recorridoinorden(codigoHuffman(&lista));
+    arbol=codigoHuffman(&lista);
+    generarCodigos(&tabla,arbol,0,0);
+    mostrarTabla(tabla);
+    fwrite(&tam_archivo,sizeof(int),1,archivo_comprimido);
+    fwrite(&n_elementos,sizeof(int),1,archivo_comprimido);
+    escribirTabla(tabla,archivo_comprimido);
+    fseek(archivo_entrada, 0L, SEEK_SET);
+    while (!feof(archivo_entrada))
+    {
+        caracter=fgetc(archivo_entrada);
+        elem_tabla=buscarTabla(tabla,caracter);
+        while (num_bits+elem_tabla->tam_code>32)
+        {
+            caracter=palabra>>(num_bits-8);
+            fwrite(&caracter,sizeof(char),1,archivo_comprimido);
+            num_bits-=8;
+        }
+        palabra <<= elem_tabla->tam_code;
+        palabra |= elem_tabla->code;
+        num_bits+=elem_tabla->tam_code;
+    }
+    while (num_bits>0)
+    {
+        if (num_bits>=8)
+        {
+            caracter=palabra>>(num_bits-8);
+        }
+        else
+        {
+            caracter=palabra<<(8-num_bits);
+        }
+        fwrite(&caracter,sizeof(char),1,archivo_comprimido);
+        num_bits-=8;    
+    }
     fclose(archivo_entrada); //Cerramos el archivo de los datos
-    
+    fclose(archivo_comprimido);
     return 0;                               //Fin del programa
 }
