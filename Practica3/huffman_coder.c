@@ -126,7 +126,7 @@ void recorridoinorden(struct tree *raiz)
     }
 }
 
-void insertarTabla(struct table **tabla,char caracter,int tam_code, int code){
+void insertarTabla(struct table **tabla,unsigned char caracter,int tam_code, int code){
     struct table *nuevo=NULL;
     nuevo=(struct table *)malloc(sizeof(struct table));
     nuevo->caracter=caracter;
@@ -162,12 +162,16 @@ void escribirTabla(struct table *tabla, FILE *archivo){
 
 //void codificarArchivo
 
-struct table * buscarTabla(struct table *tabla,char caracter){
-    while (tabla && tabla->caracter!=caracter)
+struct table * buscarTabla(struct table *tabla,unsigned char caracter){
+    while (tabla)
     {
+        if (tabla->caracter==caracter)
+        {
+            return tabla;
+        }
         tabla=tabla->next;
     }
-    return tabla;
+    return NULL; //Regresa NULL si no se encuentra, caso que sucede cuando feof(archivo)=TRUE
 }
 
 int main(int argc, char *argv[])
@@ -183,7 +187,7 @@ int main(int argc, char *argv[])
     int num_bits=0;
     int palabra=0;
     int repeticiones[256]={0};                                           
-    archivo_entrada = fopen("hola.mp3", "r"); //prueba: nombre del archivo con extension ej: michis.mp4
+    archivo_entrada = fopen("prueba", "r"); //prueba: nombre del archivo con extension ej: michis.mp4
     archivo_comprimido=fopen("comprimido1.txt","wb");
     fseek(archivo_entrada, 0L, SEEK_END);
     tam_archivo=ftell(archivo_entrada);
@@ -214,6 +218,7 @@ int main(int argc, char *argv[])
     {
         caracter=fgetc(archivo_entrada);
         elem_tabla=buscarTabla(tabla,caracter);
+        if(elem_tabla==NULL) break; // Termina si no se encontro elemento (eof)
         while (num_bits+elem_tabla->tam_code>32)
         {
             caracter=palabra>>(num_bits-8);
