@@ -40,7 +40,7 @@ struct list
 struct table{
     char caracter;
     int code;
-    int tam_code;
+    char tam_code;
     struct table *next;
 };
 
@@ -155,7 +155,7 @@ void escribirTabla(struct table *tabla, FILE *archivo){
     {
         fwrite(&tabla->caracter,sizeof(char),1,archivo);
         fwrite(&tabla->code,sizeof(int),1,archivo);
-        fwrite(&tabla->tam_code,sizeof(int),1,archivo);
+        fwrite(&tabla->tam_code,sizeof(char),1,archivo);
         tabla=tabla->next;
     }
 }
@@ -182,13 +182,13 @@ int main(int argc, char *argv[])
     struct table *elem_tabla=NULL;
     struct tree *arbol=NULL;
     char *A, caracter;
-    int tam_archivo;
+    long int tam_archivo;
     int n_elementos=0;
     int num_bits=0;
     int palabra=0;
     int repeticiones[256]={0};                                           
-    archivo_entrada = fopen("prueba", "r"); //prueba: nombre del archivo con extension ej: michis.mp4
-    archivo_comprimido=fopen("comprimido1.txt","wb");
+    archivo_entrada = fopen("hola.txt", "r"); //prueba: nombre del archivo con extension ej: michis.mp4
+    archivo_comprimido=fopen("comprimido","wb");
     fseek(archivo_entrada, 0L, SEEK_END);
     tam_archivo=ftell(archivo_entrada);
     A=(char *)malloc(sizeof(char) * tam_archivo); //No quitar, se rompe :c
@@ -205,12 +205,12 @@ int main(int argc, char *argv[])
         }
     }
     mostrarLista(lista);
-    printf("\n\n\t%d -> %d\n",tam_archivo,n_elementos);
+    printf("\n\n\t%ld -> %d\n",tam_archivo,n_elementos);
     //recorridoinorden(codigoHuffman(&lista));
     arbol=codigoHuffman(&lista);
     generarCodigos(&tabla,arbol,0,0);
     mostrarTabla(tabla);
-    fwrite(&tam_archivo,sizeof(int),1,archivo_comprimido);
+    fwrite(&tam_archivo,sizeof(long int),1,archivo_comprimido);
     fwrite(&n_elementos,sizeof(int),1,archivo_comprimido);
     escribirTabla(tabla,archivo_comprimido);
     fseek(archivo_entrada, 0L, SEEK_SET);
