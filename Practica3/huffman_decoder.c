@@ -26,8 +26,8 @@
 
 struct tree
 {
-    char caracter;
-    int code;
+    unsigned char caracter;
+    unsigned long int code;
     char tam_code;
     struct tree *izq, *der;
 };
@@ -61,12 +61,11 @@ int main(int argc, char const *argv[])
     archivo_comprimido=fopen("comprimido","rb");
     fread(&tam_archivo,sizeof(long int),1,archivo_comprimido);
     fread(&n_elementos,sizeof(int),1,archivo_comprimido);
-    //printf("\n%li->%i",tam_archivo,n_elementos);
     for (int i = 0; i < n_elementos; i++)
     {
         hoja=(struct tree *)malloc(sizeof(struct tree ));
         fread(&hoja->caracter,sizeof(char),1,archivo_comprimido);
-        fread(&hoja->code,sizeof(int),1,archivo_comprimido);
+        fread(&hoja->code,sizeof(unsigned long int),1,archivo_comprimido);
         fread(&hoja->tam_code,sizeof(char),1,archivo_comprimido);
         hoja->der=NULL;
         hoja->izq=NULL;
@@ -116,9 +115,8 @@ int main(int argc, char const *argv[])
             raiz->izq=hoja;
         }
     }
-    //recorridoinorden(arbol);
     palabra=0;
-    archivo_salida=fopen("des.txt","w");
+    archivo_salida=fopen("des.jpg","w");
     fread(&caracter,sizeof(char),1,archivo_comprimido);
     palabra|=caracter;
     palabra<<=8;

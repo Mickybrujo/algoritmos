@@ -26,7 +26,7 @@
 
 struct tree
 {
-    char caracter;
+    unsigned char caracter;
     int repeticiones;
     struct tree *izq, *der;
 };
@@ -38,9 +38,9 @@ struct list
 };
 
 struct table{
-    char caracter;
-    int code;
-    char tam_code;
+    unsigned char caracter;
+    unsigned long int code;
+    unsigned char tam_code;
     struct table *next;
 };
 
@@ -154,13 +154,12 @@ void escribirTabla(struct table *tabla, FILE *archivo){
     while (tabla)
     {
         fwrite(&tabla->caracter,sizeof(char),1,archivo);
-        fwrite(&tabla->code,sizeof(int),1,archivo);
+        fwrite(&tabla->code,sizeof(unsigned long int),1,archivo);
         fwrite(&tabla->tam_code,sizeof(char),1,archivo);
         tabla=tabla->next;
     }
 }
 
-//void codificarArchivo
 
 struct table * buscarTabla(struct table *tabla,unsigned char caracter){
     while (tabla)
@@ -185,9 +184,9 @@ int main(int argc, char *argv[])
     long int tam_archivo;
     int n_elementos=0;
     int num_bits=0;
-    int palabra=0;
+    unsigned long int palabra=0;
     int repeticiones[256]={0};                                           
-    archivo_entrada = fopen("hola.txt", "r"); //prueba: nombre del archivo con extension ej: michis.mp4
+    archivo_entrada = fopen("escomio_guapo.jpg", "r"); //prueba: nombre del archivo con extension ej: michis.mp4
     archivo_comprimido=fopen("comprimido","wb");
     fseek(archivo_entrada, 0L, SEEK_END);
     tam_archivo=ftell(archivo_entrada);
@@ -197,7 +196,7 @@ int main(int argc, char *argv[])
     {
         ++repeticiones[fgetc(archivo_entrada)];
     }
-    for (int j = 0; j < 255; j++)
+    for (int j = 0; j < 256; j++)
     {
         if(repeticiones[j]!=0){
             n_elementos++;
@@ -209,7 +208,7 @@ int main(int argc, char *argv[])
     //recorridoinorden(codigoHuffman(&lista));
     arbol=codigoHuffman(&lista);
     generarCodigos(&tabla,arbol,0,0);
-    mostrarTabla(tabla);
+    //mostrarTabla(tabla);
     fwrite(&tam_archivo,sizeof(long int),1,archivo_comprimido);
     fwrite(&n_elementos,sizeof(int),1,archivo_comprimido);
     escribirTabla(tabla,archivo_comprimido);
