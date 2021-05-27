@@ -189,7 +189,7 @@ int main(int argc, char const *argv[])
 
     //******************************************************************
 
-    printf("\n\tResultados para: %s\n", argv[1]);
+    printf("\n\tResultados  de tiempos para descomprimir el archivo: %s\n", argv[1]);
     //Cálculo del tiempo de ejecución del programa
     printf("\n");
     printf("real (Tiempo total)  %.10f s\n", wtime1 - wtime0);
